@@ -34,6 +34,8 @@ También le daremos una distinción a los personajes que ya conocíamos. A parti
 
 Una diferencia entre los héroes y los enemigos es que los héroes acumulan puntos de victoria (VP), mientras que los enemigos _tienen_ un valor de puntos de victoria (VP). Cuando un héroe mata a un enemigo, el héroe gana los VP del enemigo que mató.
 
+Cada integrante del equipo deberá agregar al menos un enemigo.
+
 ## Parte 4: Preparando el campo de batalla
 
 Incorporaremos otro nuevo concepto a nuestro juego de encuentros en la Tierra Media: los Encuentros (_Encounters_).
@@ -52,7 +54,7 @@ Todo encuentro deben exponer un método `void DoEncounter()` para ejecutarlo. Cu
 
 - Se repite el primer punto.
 
-El encuentro termina cuando todos los héroes o todos los enemigos han muerto.
+El encuentro termina cuando todos los héroes o todos los enemigos han muerto. Si un héroe ha conseguido 5+ (5 o más) VP, se cura.
 
 ### 4.1: Tests
 
@@ -71,4 +73,4 @@ Incorporen el código a la rama *master* del repositorio (utilizando Pull Reques
 
 *******
 
-<sup>1</sup> _«La refactorización (del inglés refactoring) es una técnica de la ingeniería de software para reestructurar un código fuente, alterando su estructura interna sin cambiar su comportamiento externo.» [Fuente](https://es.wikipedia.org/wiki/Refactorizaci%C3%B3n)_
+<sup>1</sup> _«La refactorización (del inglés refactoring) es una técnica de la ingeniería de software para reestructurar un código fuente, alterando su estructura interna sin cambiar su comportamiento externo.» [Fuente](https://es.wikipedia.org/wiki/Refactorizaci%C3%B3n)_. Aquí hay también una [guía de refactoring](https://refactoring.com/catalog/) muy útil. 
