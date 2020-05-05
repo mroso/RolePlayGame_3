@@ -73,4 +73,13 @@ Incorporen el código a la rama *master* del repositorio (utilizando Pull Reques
 
 *******
 
+## Anexo: Diagrama de clases
+
+A continuación se incluye un diagrama de clases de la solución provista en src/
+
+![Class Diagram](./docs/ClassDiagram.svg)
+
+
+*******
+
 <sup>1</sup> _«La refactorización (del inglés refactoring) es una técnica de la ingeniería de software para reestructurar un código fuente, alterando su estructura interna sin cambiar su comportamiento externo.» [Fuente](https://es.wikipedia.org/wiki/Refactorizaci%C3%B3n)_. Aquí hay también una [guía de refactoring](https://refactoring.com/catalog/) muy útil. 
