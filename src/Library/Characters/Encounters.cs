@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    /* Clase donde se realiza el encuentro entre heroes y enemigos */
+
+/* Clase donde se realiza el encuentro entre heroes y enemigos 
+*/
     public class Encounters
 
     {
