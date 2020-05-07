@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Archer: Character
+    public class Archer: Character, IHeroes
     {
         private int InitialHealth = 100;
+
+        public int VictoryPoints { get; set; }
 
         public Archer(string name)
         {

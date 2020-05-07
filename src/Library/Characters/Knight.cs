@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Knight: Character
+    public class Knight: Character, IHeroes
     {
         private int InitialHealth = 100;
+        public int VictoryPoints { get; set; }
 
         public Knight(string name)
         {
