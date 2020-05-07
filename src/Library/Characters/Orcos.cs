@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
+
+/* Aplicamos herencia para que los orcos sean un character y un enemigo. Tiene esos metodos y atributos.
+*/
     public class Orcos: Character, IEnemies
     {
         private int InitialHealth = 100;
