@@ -53,7 +53,7 @@ namespace RoleplayGame
 
         }
 
-        void Turn (List<IEnemies> badGuys)
+             void Turn (List<IEnemies> badGuys)
         { // -Todos los enemigos atacan a un solo Heroe
             if (goodGuys.Count == 1 && badGuys.Count > 1)
             {
@@ -89,5 +89,26 @@ namespace RoleplayGame
                 }
             }
         }
+        void Turn(List<IHeroes>goodGuys)
+        { //cada heroe ataca a un enemigo
+          foreach (Character heroe in goodGuys)
+         {
+            foreach (Character enemy in badGuys)
+            {
+                int heroeAtack = heroe.AttackValue;//toma el valor de ataque de cada heroe en goodguys
+                enemy.ReceiveAttack(heroeAtack);
+                     
+            //si el enemigo muere se quita de la lista y se le da los VP a el Heroe
+            if ( enemy.Health ==0)
+            {
+                RemoveCharacter((IEnemies)enemy);
+                ((IHeroes)heroe).VictoryPoints+=((IEnemies)enemy).VictoryPoints;
+                break;
+            }
+            }
+            
+        }
+
     }
+}
 }

@@ -3,11 +3,11 @@ namespace RoleplayGame
 {
     public class UrukHai: Character, IEnemies
     {
+        private int InitialHealth = 100;
         public int VictoryPoints { get; } = 2;
         public UrukHai (string name)
         {
             this.Name = name;
-            this.Health = 100;
             this.AddItem(new Sword());
             this.AddItem(new Shield());
         }

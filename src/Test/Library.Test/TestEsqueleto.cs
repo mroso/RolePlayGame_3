@@ -10,12 +10,12 @@ Test para Esqueleto
 */
     public class Esqueleto
     {
-        public Esqueletos huesudo = new Esqueletos ("Purohueso");
-        public Esqueletos demon = new Esqueletos ("Demon");
+        public Esqueleto huesudo = new Esqueleto ("Purohueso");
+        public Esqueleto demon = new Esqueleto ("Demon");
 
         [SetUp] public void Init()
         {
-            huesudo = new Esqueletos ("Purohueso");
+            huesudo = new Esqueleto ("Purohueso");
         }
 
         [Test]
