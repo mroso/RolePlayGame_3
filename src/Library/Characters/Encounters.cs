@@ -10,11 +10,27 @@ namespace RoleplayGame
     public class Encounters
 
     {
-        protected List<IHeroes> goodGuys = new List<IHeroes>();
-        protected List<IEnemies> badGuys = new List<IEnemies>();
+        public List<IHeroes> goodGuys = new List<IHeroes>();
+        public List<IEnemies> badGuys = new List<IEnemies>();
         
+        public void AddCharacter (IHeroes hero)
+        {
+            this.goodGuys.Add(hero);
+        }
+        public void AddCharacter (IEnemies enemy)
+        {
+            this.badGuys.Add(enemy);
+        }
 
-        void DoEncounter()
+        public void RemoveCharacter (IHeroes hero)
+        {
+            this.goodGuys.Remove(hero);
+        }
+        public void RemoveCharacter (IEnemies enemy)
+        {
+            this.badGuys.Remove(enemy);
+        }
+        public void DoEncounter()
         {
 
         }
