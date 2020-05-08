@@ -37,7 +37,7 @@ namespace RoleplayGame
 
                 if (AllAlive (goodGuys))
                 {
-                    Turn (goodGuys);
+                   // Turn (goodGuys);
                 }
             }
 
@@ -59,7 +59,7 @@ namespace RoleplayGame
             {
                 foreach (Character enemy in badGuys)
                 {
-                    (Character)goodGuys[0].ReceiveAttack (enemy);
+                    ((Character)(goodGuys[0])).ReceiveAttack (enemy.AttackValue);
 
                     // -Si el Heroe muere se quita de su Lista
                     if (((Character) goodGuys[0]).Health == 0)
@@ -77,10 +77,10 @@ namespace RoleplayGame
                 {
                     int indexHeroe = i % goodGuys.Count;
 
-                    Character (goodGuys[indexHeroe]).ReceiveAttack (badGuys[i]);
+                    (  (Character) goodGuys[indexHeroe]).ReceiveAttack(((Character)badGuys[i]).AttackValue);
 
                     // -Si el Heroe muere se quita de su Lista de Heroes
-                    if (((Character) goodGuys[0]).Health == 0)
+                    if ( (((Character) goodGuys[indexHeroe])).Health == 0)
                     {
                         RemoveCharacter (goodGuys[0]);
                         break;
