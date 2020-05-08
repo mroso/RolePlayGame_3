@@ -11,6 +11,9 @@ namespace RoleplayGame
             this.AddItem(new Sword());
             this.AddItem(new Shield());
         }
-        public override void Cure(){}
+        public override void Cure()
+        {
+            
+        }
     }
 }
