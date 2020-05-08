@@ -6,12 +6,12 @@ namespace Library.Test
 {
     public class DwarfTest
     {
-        public Dwarf petizo = new Dwarf ("El Petizo");
+        public Dwarf Petizo = new Dwarf ("El Petizo");
         public Dwarf pitufo = new Dwarf ("Enojon");
 
         [SetUp] public void Init()
         {
-            Petizo = new Dwarf ("El Petizo");
+            Dwarf Petizo = new Dwarf ("El Petizo");
         }
 
         [Test]

@@ -6,13 +6,12 @@ namespace RoleplayGame
 */
     public class Troll: Character, IEnemies
     {
-        private int InitialHealth = 100;
-
         public int VictoryPoints { get;}
 
-        public Orcos(string name)
+        public Troll(string name)
         {
             this.Name = name;
+            this.Health = 100;
             this.AddItem(new Axe());
             this.AddItem(new Bow());
 

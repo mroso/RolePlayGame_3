@@ -6,11 +6,11 @@ namespace Library.Test
 {
     public class TestTroll
     {
-        public Troll mineris = new Troll ("Mineris");
+        public Troll Mineris = new Troll ("Mineris");
 
         [SetUp] public void Init()
         {
-            Mineris = new Troll ("Mineris");
+            Troll Mineris = new Troll ("Mineris");
         }
 
         [Test]
