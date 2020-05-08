@@ -10,7 +10,7 @@ namespace RoleplayGame
 
         public int VictoryPoints { get;}
 
-        public Orcos(string name)
+        public Troll(string name)
         {
             this.Name = name;
             this.AddItem(new Axe());
