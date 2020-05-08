@@ -64,7 +64,7 @@ namespace Library.Test
             Assert.AreEqual(merlin.Health, 60);
         }
         [Test]
-        public void TwoEnemiesOneHero()
+        public void TwoEnemiesOneHeroEnemyDies()
         {
             Encounters oneVersusOne = new Encounters();
             Wizard merlin = new Wizard ("Gandalf");
@@ -77,7 +77,7 @@ namespace Library.Test
 
             oneVersusOne.DoEncounter();
 
-            Assert.AreEqual(merlin.Health, 60);
+            Assert.AreEqual(urukHai1.Health, 0);
         }
     }
 }
