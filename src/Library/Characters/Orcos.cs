@@ -8,7 +8,7 @@ namespace RoleplayGame
     {
         private int InitialHealth = 100;
 
-        public int VictoryPoints { get;}
+        public int VictoryPoints { get;} = 1;
 
         public Orcos(string name)
         {
