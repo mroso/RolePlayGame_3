@@ -11,7 +11,6 @@ namespace RoleplayGame
     {
         public List<IHeroes> goodGuys = new List<IHeroes> ();
         public List<IEnemies> badGuys = new List<IEnemies> ();
-
         public void AddCharacter (IHeroes hero)
         {
             this.goodGuys.Add (hero);
@@ -31,21 +30,19 @@ namespace RoleplayGame
         }
         public void DoEncounter ()
         {
-            while (AllAlive (goodGuys) && AllAlive (badGuys))
+            while (AreAlive (goodGuys) && AreAlive(badGuys))
             {
                 Turn (badGuys);
 
-                if (AllAlive (goodGuys))
+                if (AreAlive (goodGuys))
                 {
                     Turn (goodGuys);
                 }
             }
-
         }
-
         void Turn (List<IEnemies> badGuys)
         { // -Si hay un solo Heroe ,todos los enemigos lo  atacan.
-            if (goodGuys.Count == 1 && badGuys.Count > 1)
+            if (this.goodGuys.Count == 1 && this.badGuys.Count >= 1)
             {
                 foreach (Character enemy in badGuys)
                 {
@@ -57,13 +54,12 @@ namespace RoleplayGame
                         RemoveCharacter (goodGuys[0]);
                         break;
                     }
-
                 }
             }
             // -Si hay mas de un Heroe , los enemigos atacan uno a uno a cada Heroe.
             else
             {
-                for (int i = 0; i <= badGuys.Count; i++)
+                for (int i = 0; i < badGuys.Count; i++)
                 {
                     int indexHeroe = i % goodGuys.Count;
 
@@ -72,17 +68,18 @@ namespace RoleplayGame
                     // -Si el Heroe muere se quita de su Lista de Heroes vivos
                     if (IsDead (((Character) goodGuys[indexHeroe])))
                     {
-                        RemoveCharacter (goodGuys[0]);
-                        break;
+                        RemoveCharacter (goodGuys[indexHeroe]);
                     }
-
                 }
             }
         }
         void Turn (List<IHeroes> goodGuys)
         { //cada heroe ataca a un enemigo
+
             foreach (Character heroe in goodGuys)
             {
+                List<IEnemies> killedEnemies = new List<IEnemies> ();
+                
                 foreach (Character enemy in badGuys)
                 {
                     int heroeAtack = heroe.AttackValue; //toma el valor de ataque de cada heroe en goodguys
@@ -91,30 +88,27 @@ namespace RoleplayGame
                     //si el enemigo muere se quita de la lista y se le da los VP a el Heroe
                     if (IsDead (enemy))
                     {
-                        RemoveCharacter ((IEnemies) enemy);
+                        killedEnemies.Add((IEnemies)enemy);
                         ((IHeroes) heroe).VictoryPoints += ((IEnemies) enemy).VictoryPoints;
-                        break;
                     }
                 }
-
+                foreach (IEnemies enemy in killedEnemies)
+                {
+                    RemoveCharacter ((IEnemies) enemy);
+                }
             }
-
         }
         bool IsDead (Character character)
         {
             return character.Health == 0;
-
         }
-        bool AllAlive (List<IEnemies> characters)
+        bool AreAlive (List<IEnemies> characters)
         {
             return characters.Count > 0;
-
         }
-        bool AllAlive (List<IHeroes> characters)
+        bool AreAlive (List<IHeroes> characters)
         {
             return characters.Count > 0;
-
         }
-
     }
 }

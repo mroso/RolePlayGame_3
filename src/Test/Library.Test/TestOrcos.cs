@@ -8,7 +8,7 @@ namespace Library.Test
 /*
 Test para Orcos
 */
-    public class Orcos
+    public class TestOrcos
     {
         public Orcos devil = new Orcos ("Devil");
         public Orcos demon = new Orcos ("Demon");
