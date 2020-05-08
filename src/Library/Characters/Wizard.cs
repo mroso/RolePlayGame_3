@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Wizard: MagicCharacter
+    public class Wizard: MagicCharacter, IHeroes
     {
         private int InitialHealth = 100;
+        public int VictoryPoints { get; set; } = 0;
 
         public Wizard(string name)
         {

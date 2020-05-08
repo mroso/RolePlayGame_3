@@ -5,7 +5,7 @@ namespace RoleplayGame
     {
         private int InitialHealth = 100;
 
-        public int VictoryPoints { get; set; }
+        public int VictoryPoints { get; set; } = 0;
 
         public Archer(string name)
         {
