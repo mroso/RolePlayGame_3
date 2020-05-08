@@ -11,7 +11,7 @@ namespace Library.Test
 
         [SetUp] public void Init()
         {
-            petizo = new Dwarf ("El Petizo");
+            Dwarf petizo = new Dwarf ("El Petizo");
         }
 
         [Test]

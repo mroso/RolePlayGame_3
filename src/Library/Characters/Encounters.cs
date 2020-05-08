@@ -53,16 +53,16 @@ namespace RoleplayGame
 
         }
 
-        void Turn (List<IEnemies> badGuys)
+             void Turn (List<IEnemies> badGuys)
         { // -Todos los enemigos atacan a un solo Heroe
             if (goodGuys.Count == 1 && badGuys.Count > 1)
             {
                 foreach (Character enemy in badGuys)
                 {
-                    (Character)goodGuys[0].ReceiveAttack (enemy);
+                    ((Character)(goodGuys[0])).ReceiveAttack (enemy.AttackValue);
 
                     // -Si el Heroe muere se quita de su Lista
-                    if ((Character)goodGuys[0].Health == 0)
+                    if (((Character) goodGuys[0]).Health == 0)
                     {
                         RemoveCharacter (goodGuys[0]);
                         break;
@@ -75,12 +75,12 @@ namespace RoleplayGame
             {
                 for (int i = 0; i <= badGuys.Count; i++)
                 {
-                    int indexHeroe = i % goodGuys[i].Count;
+                    int indexHeroe = i % goodGuys.Count;
 
-                    Character (goodGuys[indexHeroe]).ReceiveAttack (badGuys[i]);
+                    (  (Character) goodGuys[indexHeroe]).ReceiveAttack(((Character)badGuys[i]).AttackValue);
 
                     // -Si el Heroe muere se quita de su Lista de Heroes
-                    if ((Character) goodGuys[0].Health = 0)
+                    if ( (((Character) goodGuys[indexHeroe])).Health == 0)
                     {
                         RemoveCharacter (goodGuys[0]);
                         break;
@@ -89,5 +89,26 @@ namespace RoleplayGame
                 }
             }
         }
+        void Turn(List<IHeroes>goodGuys)
+        { //cada heroe ataca a un enemigo
+          foreach (Character heroe in goodGuys)
+         {
+            foreach (Character enemy in badGuys)
+            {
+                int heroeAtack = heroe.AttackValue;//toma el valor de ataque de cada heroe en goodguys
+                enemy.ReceiveAttack(heroeAtack);
+                     
+            //si el enemigo muere se quita de la lista y se le da los VP a el Heroe
+            if ( enemy.Health ==0)
+            {
+                RemoveCharacter((IEnemies)enemy);
+                ((IHeroes)heroe).VictoryPoints+=((IEnemies)enemy).VictoryPoints;
+                break;
+            }
+            }
+            
+        }
+
     }
+}
 }
