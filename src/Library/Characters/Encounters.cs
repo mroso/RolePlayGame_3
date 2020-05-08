@@ -42,34 +42,52 @@ namespace RoleplayGame
             }
 
         }
-        bool AllAlive (List<Character> characters)
+        bool AllAlive (List<IEnemies> characters)
         {
-            return character.Count () > 0;
+            return characters.Count > 0;
 
         }
+        bool AllAlive (List<IHeroes> characters)
+        {
+            return characters.Count > 0;
+
+        }
+
         void Turn (List<IEnemies> badGuys)
-            {   // -Todos los enemigos atacan a un solo Heroe
-                if (goodGuys.Count () = 1 && badGuys.Count () > 1)
+        { // -Todos los enemigos atacan a un solo Heroe
+            if (goodGuys.Count == 1 && badGuys.Count > 1)
+            {
+                foreach (Character enemy in badGuys)
                 {
-                    foreach (Character enemy in badGuys)
+                    (Character)goodGuys[0].ReceiveAttack (enemy);
+
+                    // -Si el Heroe muere se quita de su Lista
+                    if ((Character)goodGuys[0].Health == 0)
                     {
-                        // -Si el Heroe muere se quita de su Lista
-                        (Character) goodGuys[0].ReceiveAttack (enemy);
-                        if ((Character) goodGuys[0].Health == 0)
-                        {
-                            RemoveCharacter(goodGuys[0]);
-                            break;
-                        }
-                     
-                    }                     
-                }
-                // -Los enemigos atacan a uno a uno a cada Heroe
-                else 
-                {
-
-
+                        RemoveCharacter (goodGuys[0]);
+                        break;
+                    }
 
                 }
             }
+            // -Los enemigos atacan uno a uno a cada Heroe
+            else
+            {
+                for (int i = 0; i <= badGuys.Count; i++)
+                {
+                    int indexHeroe = i % goodGuys[i].Count;
+
+                    Character (goodGuys[indexHeroe]).ReceiveAttack (badGuys[i]);
+
+                    // -Si el Heroe muere se quita de su Lista de Heroes
+                    if ((Character) goodGuys[0].Health = 0)
+                    {
+                        RemoveCharacter (goodGuys[0]);
+                        break;
+                    }
+
+                }
+            }
+        }
     }
 }
