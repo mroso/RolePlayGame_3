@@ -66,7 +66,7 @@ namespace Library.Test
         [Test]
         public void TwoEnemiesOneHeroEnemyDies()
         {
-            Encounters oneVersusOne = new Encounters();
+            Encounters oneVersusOne = new Encounters();// Se testea el enfrentamiento 1vs1
             Wizard merlin = new Wizard ("Gandalf");
             merlin.AddItem(new Staff());
             UrukHai urukHai = new UrukHai ("Bad guy");
@@ -80,7 +80,7 @@ namespace Library.Test
             Assert.AreEqual(urukHai1.Health, 0);
         }
         [Test]
-        public void TwoHerovsOneEnemyDies()
+        public void TwoHerovsOneEnemyDies()// Se testea el enfrentamiento entre 2 Heroes y 1 Enemigos
         {
             Encounters TwovsOne = new Encounters();
             Wizard merlin = new Wizard ("Gandalf");
@@ -95,7 +95,7 @@ namespace Library.Test
             Assert.AreEqual(merlin.Health, 80);
         }
          [Test]
-        public void TwovsTwo()
+        public void TwovsTwo() // Se testea el enfrentamiento entre 2 Heroes y 2 Enemigos
         {
             Encounters TwovsTwo = new Encounters();
             Wizard merlin = new Wizard ("Gandalf");
@@ -112,12 +112,13 @@ namespace Library.Test
             Assert.AreEqual(merlin.Health, 80);
         }
           [Test]
-        public void TwovsTwoWithShield()
+        public void TwovsTwoWithShield()//se testea el enfrentamiento 2 vs 2 pero que dure varias rondas por lo mismo se agregan armors a enemigos
+        //y se verifica que Merlín muera
         {
             Encounters TwovsTwo = new Encounters();
             Wizard merlin = new Wizard ("Gandalf");
             UrukHai urukHai = new UrukHai ("Bad guy");
-            urukHai.AddItem(new Armor());
+            urukHai.AddItem(new Armor()); //se le agrega a urukHai varias armaduras para testear varias rondas del juego
             urukHai.AddItem(new Armor());
             urukHai.AddItem(new Armor());
             UrukHai urukHai2 =new UrukHai ("Hurukai2");
@@ -132,12 +133,13 @@ namespace Library.Test
             
         }
           [Test]
-        public void TwovsTwoWithShield2()
+        public void TwovsTwoWithShield2()//se testea el enfrentamiento 2 vs 2 pero que dure varias rondas por lo mismo se agregan armors a enemigos
+        //y se verifica que urukHai Muera
         {
             Encounters TwovsTwo = new Encounters();
             Wizard merlin = new Wizard ("Gandalf");
             UrukHai urukHai = new UrukHai ("Bad guy");
-            urukHai.AddItem(new Armor());
+            urukHai.AddItem(new Armor());//
             urukHai.AddItem(new Armor());
             urukHai.AddItem(new Armor());
             UrukHai urukHai2 =new UrukHai ("Hurukai2");
