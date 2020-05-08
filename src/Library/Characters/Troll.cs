@@ -12,8 +12,8 @@ namespace RoleplayGame
         {
             this.Name = name;
             this.Health = 100;
-            this.AddItem(new Axe());
-            this.AddItem(new Bow());
+            this.AddItem(new Staff());
+            this.AddItem(new Sword());
 
         }
 
