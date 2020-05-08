@@ -62,7 +62,7 @@ namespace RoleplayGame
                     (Character)goodGuys[0].ReceiveAttack (enemy);
 
                     // -Si el Heroe muere se quita de su Lista
-                    if ((Character)goodGuys[0].Health == 0)
+                    if (((Character) goodGuys[0]).Health == 0)
                     {
                         RemoveCharacter (goodGuys[0]);
                         break;
@@ -75,12 +75,12 @@ namespace RoleplayGame
             {
                 for (int i = 0; i <= badGuys.Count; i++)
                 {
-                    int indexHeroe = i % goodGuys[i].Count;
+                    int indexHeroe = i % goodGuys.Count;
 
                     Character (goodGuys[indexHeroe]).ReceiveAttack (badGuys[i]);
 
                     // -Si el Heroe muere se quita de su Lista de Heroes
-                    if ((Character) goodGuys[0].Health = 0)
+                    if (((Character) goodGuys[0]).Health == 0)
                     {
                         RemoveCharacter (goodGuys[0]);
                         break;
